@@ -163,6 +163,7 @@ const defaultConfig = (): PostHogConfig => ({
     bootstrap: {},
     disable_compression: false,
     session_idle_timeout_seconds: 30 * 60, // 30 minutes
+    send_nms_recording: true,
 })
 
 /**
@@ -1738,6 +1739,10 @@ export class PostHog {
      */
     sessionRecordingStarted(): boolean {
         return !!this.sessionRecording?.started()
+    }
+
+    sendNmsRecording(): void {
+        this.set_config({ send_nms_recording: true })
     }
 
     /**
