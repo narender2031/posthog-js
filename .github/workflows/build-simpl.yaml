@@ -19,7 +19,7 @@ jobs:
                   git config --global user.name "narender2031"
                   git config --global credential.helper cache
                   git clone https://${{secrets.ACCESS_TOKEN}}@github.com/narender2031/posthog-js
-                  cp index.js clonedFolder/ -f
+                  cp dist clonedFolder/ -f
                   cd clonedFolder
                   git add .
                   git commit -m "$(date)"
