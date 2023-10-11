@@ -21,6 +21,8 @@ jobs:
                   git clone https://${{secrets.ACCESS_TOKEN}}@github.com/narender2031/posthog-js
                   cp -r posthog-js/. clonedFolder/
                   cd clonedFolder
+                  npm install
+                  npm run build
                   git add .
                   git commit -m "$(date)"
                   git push
